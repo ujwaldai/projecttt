@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="BIT4thSemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="a_id" />
+          </Key>
+          <Property Name="a_id" Type="int" Nullable="false" />
+          <Property Name="a_name" Type="varchar" MaxLength="20" />
+          <Property Name="a_address" Type="varchar" MaxLength="20" />
+          <Property Name="a_phoneno" Type="int" />
+        </EntityType>
         <EntityType Name="bra01branches">
           <Key>
             <PropertyRef Name="bra01uin" />
@@ -37,6 +46,15 @@
           <Property Name="cfg01created_name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="cfg01updated_name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="cfg01updated_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cutomer">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="int" Nullable="false" />
+          <Property Name="c_name" Type="varchar" MaxLength="30" />
+          <Property Name="c_address" Type="varchar" MaxLength="30" />
+          <Property Name="c_phoneno" Type="int" />
         </EntityType>
         <EntityType Name="dep01department">
           <Key>
@@ -113,14 +131,14 @@
           <Property Name="lvl01updated_date_nep" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="lvl01updated_date_eng" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="tbl_employee">
+        <EntityType Name="products">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="p_id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="contact" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="p_id" Type="int" Nullable="false" />
+          <Property Name="p_name" Type="varchar" MaxLength="20" />
+          <Property Name="p_category" Type="varchar" MaxLength="20" />
+          <Property Name="price" Type="int" />
         </EntityType>
         <EntityType Name="UserCodes">
           <Key>
@@ -224,13 +242,15 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BIT4thSemModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="bra01branches" EntityType="Self.bra01branches" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cfg01configurations" EntityType="Self.cfg01configurations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cutomer" EntityType="Self.cutomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dep01department" EntityType="Self.dep01department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="des01designations" EntityType="Self.des01designations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="emp01employee" EntityType="Self.emp01employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="lvl01employee_levels" EntityType="Self.lvl01employee_levels" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_employee" EntityType="Self.tbl_employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserCodes" EntityType="Self.UserCodes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usr05users" EntityType="Self.usr05users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_emp01employee_bra01branches" Association="Self.FK_emp01employee_bra01branches">
@@ -269,7 +289,6 @@
           <EntitySet Name="des01designations" EntityType="BIT4thSemModel.des01designations" />
           <EntitySet Name="emp01employee" EntityType="BIT4thSemModel.emp01employee" />
           <EntitySet Name="lvl01employee_levels" EntityType="BIT4thSemModel.lvl01employee_levels" />
-          <EntitySet Name="tbl_employee" EntityType="BIT4thSemModel.tbl_employee" />
           <EntitySet Name="UserCodes" EntityType="BIT4thSemModel.UserCode" />
           <EntitySet Name="usr05users" EntityType="BIT4thSemModel.usr05users" />
           <AssociationSet Name="FK_emp01employee_bra01branches" Association="BIT4thSemModel.FK_emp01employee_bra01branches">
@@ -296,6 +315,9 @@
             <End Role="emp01employee" EntitySet="emp01employee" />
             <End Role="usr05users" EntitySet="usr05users" />
           </AssociationSet>
+          <EntitySet Name="admins" EntityType="BIT4thSemModel.admin" />
+          <EntitySet Name="cutomers" EntityType="BIT4thSemModel.cutomer" />
+          <EntitySet Name="products" EntityType="BIT4thSemModel.product" />
         </EntityContainer>
         <EntityType Name="bra01branches">
           <Key>
@@ -415,15 +437,6 @@
           <Property Name="lvl01updated_date_eng" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="emp01employee" Relationship="BIT4thSemModel.FK_emp01employee_lvl01employee_levels" FromRole="lvl01employee_levels" ToRole="emp01employee" />
         </EntityType>
-        <EntityType Name="tbl_employee">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="contact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="UserCode">
           <Key>
             <PropertyRef Name="id" />
@@ -527,6 +540,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="a_id" />
+          </Key>
+          <Property Name="a_id" Type="Int32" Nullable="false" />
+          <Property Name="a_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="a_address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="a_phoneno" Type="Int32" />
+        </EntityType>
+        <EntityType Name="cutomer">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="Int32" Nullable="false" />
+          <Property Name="c_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="c_address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="c_phoneno" Type="Int32" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="p_id" />
+          </Key>
+          <Property Name="p_id" Type="Int32" Nullable="false" />
+          <Property Name="p_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="p_category" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -646,16 +686,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbl_employee">
-            <EntityTypeMapping TypeName="BIT4thSemModel.tbl_employee">
-              <MappingFragment StoreEntitySet="tbl_employee">
-                <ScalarProperty Name="contact" ColumnName="contact" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="UserCodes">
             <EntityTypeMapping TypeName="BIT4thSemModel.UserCode">
               <MappingFragment StoreEntitySet="UserCodes">
@@ -684,6 +714,36 @@
                 <ScalarProperty Name="usr05type" ColumnName="usr05type" />
                 <ScalarProperty Name="usr05bra01uin" ColumnName="usr05bra01uin" />
                 <ScalarProperty Name="usr05userId" ColumnName="usr05userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="BIT4thSemModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="a_phoneno" ColumnName="a_phoneno" />
+                <ScalarProperty Name="a_address" ColumnName="a_address" />
+                <ScalarProperty Name="a_name" ColumnName="a_name" />
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cutomers">
+            <EntityTypeMapping TypeName="BIT4thSemModel.cutomer">
+              <MappingFragment StoreEntitySet="cutomer">
+                <ScalarProperty Name="c_phoneno" ColumnName="c_phoneno" />
+                <ScalarProperty Name="c_address" ColumnName="c_address" />
+                <ScalarProperty Name="c_name" ColumnName="c_name" />
+                <ScalarProperty Name="c_id" ColumnName="c_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="BIT4thSemModel.product">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="p_category" ColumnName="p_category" />
+                <ScalarProperty Name="p_name" ColumnName="p_name" />
+                <ScalarProperty Name="p_id" ColumnName="p_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

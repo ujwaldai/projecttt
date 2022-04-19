@@ -12,11 +12,11 @@ namespace DMS.DAL.DatabaseContext
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_employee
+    public partial class cutomer
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string address { get; set; }
-        public string contact { get; set; }
+        public int c_id { get; set; }
+        public string c_name { get; set; }
+        public string c_address { get; set; }
+        public Nullable<int> c_phoneno { get; set; }
     }
 }

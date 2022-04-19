@@ -122,10 +122,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseContext\admin.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseContext\bra01branches.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DatabaseContext\cfg01configurations.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseContext\cutomer.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DatabaseContext\DataContext.cs" />
@@ -158,7 +164,7 @@
     </Compile>
     <Compile Include="DatabaseContext\MetaData\EmployeeMD.cs" />
     <Compile Include="DatabaseContext\PartialClasses.cs" />
-    <Compile Include="DatabaseContext\tbl_employee.cs">
+    <Compile Include="DatabaseContext\product.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DatabaseContext\UserCode.cs">

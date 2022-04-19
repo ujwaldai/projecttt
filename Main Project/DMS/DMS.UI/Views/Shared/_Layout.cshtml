@@ -1,498 +1,285 @@
-﻿@using DMS.DAL.StaticHelper
-@using DMS.DAL.Helpers
-@{
-    var SessionInfo = SessionHelper.GetSession();
-
-}
-<!DOCTYPE html>
-<!-- Template Name: Rapido - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.2 Author: ClipTheme -->
-<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
-<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
-<!--[if !IE]><!-->
-
+﻿<!DOCTYPE html>
 <html lang="en">
-<!--<![endif]-->
-<!-- start: HEAD -->
 
 <head>
-    <title>@ViewBag.Title</title>
-    <!-- start: META -->
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-    <!-- end: META -->
-    <!-- start: MAIN CSS -->
-    <!--test Print-->
-    @* <link rel="stylesheet" type="text/css" media="print" href="print.css">*@
+    <meta charset="utf-8">
+    <title>EShopper - Bootstrap Shop Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
-    <!--end print-->
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap/css/bootstrap.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/font-awesome/css/font-awesome.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/iCheck/skins/minimal/_all.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/styles.css")">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/animate.css/animate.min.css")">
-    <!-- end: MAIN CSS -->
-    <!-- start: CSS REQUIRED FOR SUBVIEW CONTENTS -->
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/owl-carousel/owl-carousel/owl.theme.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/owl-carousel/owl-carousel/owl.transitions.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/summernote/dist/summernote.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/fullcalendar/fullcalendar/fullcalendar.css")">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap-select/bootstrap-select.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css")">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/toggle/toggle.min.css")" />
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/select2/select2.min.css")" />
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/prabhucss.css")" />
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datepicker/css/datepicker.css")" />
-
-
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/NepaliDatePick/nepali.css")" />
-    <link rel="stylesheet" href="~/Content/bootstrap-iconpicker.min.css" />
-    <!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
-    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
-    <!-- start: CORE CSS -->
-    <link rel="stylesheet" media="print" href="@Url.Content("~/Content/assets/css/print.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/styles-responsive.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/plugins.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/DataTables/media/css/DT_bootstrap.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/DataTables/media/css/fixedHeader.dataTables.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/jqueryFixedHeader/table-fixed-header.css")">
-
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/themes/theme-style8.css")" type="text/css" id="skin_color">
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/summernote/dist/summernote.css")" type="text/css" id="skin_color">
-    <link href="~/Content/assets/css/FaijanManualToaster.css" rel="stylesheet" />
-
-    <link href="~/Content/ModalCss.css" rel="stylesheet" />
-    @* <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/print.css")" type="text/css" media="print">*@
-
-    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" type="text/css">
-
-    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/fonts/raleway/stylesheet.css")" type="text/css">
-
-    <link rel="stylesheet" href="@Url.Content("~/" + ViewHelper.TenantFile("content/css/theme.css"))" type="text/css">
-    <link href="~/Content/assets/css/password_strength/password_strength.css" rel="stylesheet" />
-    <link href="~/Content/assets/css/password_strength/style.css" rel="stylesheet" />
-
-    @Scripts.Render("~/bundles/jQuery")
-
-    <!-- end: CORE CSS -->
-    <style>
-        ul.main-navigation-menu > li > a {
-            background-color: #0061a8;
-        }
-
-        .selected {
-            background-color: green;
-        }
-
-        .bad {
-            background-color: red;
-        }
-    </style>
+    <!-- NewFolder1 -->
+    <link rel="stylesheet" href="~/Content/Newfolder1/css/style.css" />
+    <link rel="stylesheet" href="~/Content/Newfolder1/css/style.min.css" />
+  
 
 </head>
-<!-- end: HEAD -->
-<!-- start: BODY -->
-<body class="">
-    <div id="ajaxLoaderDiv" class="hidden" style="position:fixed; top:40%; left:57%; z-index:1234;">
-        <img src="@Url.Content("~/content/assets/images/loading.gif")" />
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-2 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark" href="">FAQs</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Help</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Support</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-dark pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center py-3 px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a href="" class="text-decoration-none">
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                </a>
+            </div>
+            <div class="col-lg-6 col-6 text-left">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 col-6 text-right">
+                <a href="" class="btn border">
+                    <i class="fas fa-heart text-primary"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="" class="btn border">
+                    <i class="fas fa-shopping-cart text-primary"></i>
+                    <span class="badge">0</span>
+                </a>
+            </div>
+        </div>
     </div>
-    <div id="ajaxLoaderDivBackground" class="hidden"></div>
-
-
-
-    <div class="main-wrapper">
-
-        <!-- start: PAGESLIDE LEFT -->
-        <a class="closedbar inner hidden-sm hidden-xs" href="#">
-
-        </a>
-
-        <!-- end: PAGESLIDE LEFT -->
-
-
-        <nav id="pageslide-left" class="pageslide">
-            <!--html test-->
-            <div class="navbar-content" style="height: 561px;">
-                <!-- start: SIDEBAR -->
-                <div class="main-navigation left-wrapper transition-left ps-container">
-                    <div class="navigation-toggler hidden-sm hidden-xs pull-right">
-                        <a style="margin-top:20px;" href="#main-navbar" class="sb-toggle-left" id="MenuIconLink"></a>
-                    </div><!-- start: MAIN NAVIGATION MENU -->
-                    <div class="row logo-area">
-                        <div class="text-center">
-                            <div class="col-xs-12">
-                                <a href="@Url.Action("Index", "Home")">
-                                    <img src="@Url.Content("~/" + ViewHelper.TenantFile("Content/Images/logo.jpg"))" class="img-responsive center1" style="height:140px;" />
-                                </a>
-                                <input type="text" name="q" id="menu-list-search" class="form-control" placeholder="Search..." />
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid mb-5">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                    <h6 class="m-0">Categories</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-toggle="dropdown">Dresses <i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                <a href="" class="dropdown-item">Men's Dresses</a>
+                                <a href="" class="dropdown-item">Women's Dresses</a>
+                                <a href="" class="dropdown-item">Baby's Dresses</a>
                             </div>
                         </div>
-                    </div><!--///////////////////////////// My Side Bar Navigations /////////////////////////////////-->
-                    <ul class="main-navigation-menu" id="menu-list" style="height: 457px;">
-                        @{Html.RenderAction("CreateMenu", "Menu");}
-                    </ul><!-- end: MAIN NAVIGATION MENU -->
-                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px; width: 260px; display: none;">
-                        <div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+                        <a href="" class="nav-item nav-link">Shirts</a>
+                        <a href="" class="nav-item nav-link">Jeans</a>
+                        <a href="" class="nav-item nav-link">Swimwear</a>
+                        <a href="" class="nav-item nav-link">Sleepwear</a>
+                        <a href="" class="nav-item nav-link">Sportswear</a>
+                        <a href="" class="nav-item nav-link">Jumpsuits</a>
+                        <a href="" class="nav-item nav-link">Blazers</a>
+                        <a href="" class="nav-item nav-link">Jackets</a>
+                        <a href="" class="nav-item nav-link">Shoes</a>
                     </div>
-                    <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px; height: 561px; display: inherit;">
-                        <div class="ps-scrollbar-y" style="top: 0px; height: 429px;"></div>
-                    </div>
-                </div><!-- end: SIDEBAR -->
+                </nav>
             </div>
-        </nav>
-
-        <!-- start: PAGESLIDE RIGHT -->
-        <div id="pageslide-right" class="pageslide slide-fixed inner">
-        </div>
-        <!-- end: PAGESLIDE RIGHT -->
-        <!-- start: MAIN CONTAINER -->
-
-        <div class="main-container inner">
-            <!-- start: TOPBAR -->
-            <header class="topbar navbar navbar-inverse navbar-fixed-top inner" style="height:60px;">
-                <!-- start: TOPBAR CONTAINER -->
-                <div class="container" style="height:60px;background-color:#3d57b5;">
-                    <div class="topbar-tools">
-                        <!-- start: TOP NAVIGATION MENU -->
-                        <ul class="nav navbar-right">@Html.Partial("_LoginPartial")</ul>
-                        <!-- end: TOP NAVIGATION MENU -->
-                    </div>
-
-                    <div class="topbar-tools hidden-sm hidden-md" style="float:left; margin-top:5px;">
-                        <div style="margin-top:10px; width:auto">
-                            @*@if ((SessionInfo.EmployeeTypes != null && SessionInfo.EmployeeTypes.Contains("LoanInitiator")) || SessionInfo.IsSuperAdmin)
-                                {
-                                <a href="@Url.Action("Create", "LoanRequest")" class="btn btn-primary"><i class="fa fa-plus"></i> New Loan Request</a>
-                                }
-                                <a href="@Url.Action("Index","LoanProcessing")" class="btn btn-danger"> <i class="fa fa-list"></i> Pending Loan Request
-                                <span class="badge PendingCount"></span>
-                                </a>*@
-
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="shop.html" class="nav-item nav-link">Shop</a>
+                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
+                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <div class="navbar-nav ml-auto py-0">
+                            <a href="" class="nav-item nav-link">Login</a>
+                            <a href="" class="nav-item nav-link">Register</a>
                         </div>
                     </div>
-
+                </nav>
+                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="height: 410px;">
+                            <img class="img-fluid" src="img/carousel-1.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 410px;">
+                            <img class="img-fluid" src="img/carousel-2.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-prev-icon mb-n2"></span>
+                        </div>
+                    </a>
+                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-next-icon mb-n2"></span>
+                        </div>
+                    </a>
                 </div>
-                <!-- end: TOPBAR CONTAINER -->
-            </header>
-            <!-- end: TOPBAR -->
-            <!-- start: PAGE -->
-            <div class="main-content" id="ajax-content">
-
-                @RenderBody()
             </div>
         </div>
-
-
-        <!-- end: PAGE -->
     </div>
-    <!-- end: MAIN CONTAINER -->
-    <!-- start: FOOTER -->
-    <footer class="inner">
-        <div class="footer-inner">
-            <div class="pull-left">
-                @DateTime.Now.Year &copy; Main Project
+    <!-- Navbar End -->
+
+
+
+    @RenderBody()
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <a href="" class="text-decoration-none">
+                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Shopper</h1>
+                </a>
+                <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
             </div>
-            <div class="pull-right text-right">
-                <span class="go-top pull-right"><i class="fa fa-chevron-up"></i></span>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
+                                       required="required" />
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
-    <!-- end: FOOTER -->
-
-    <script src="@Url.Content("~/Content/assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/bootstrap/js/bootstrap.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/blockUI/jquery.blockUI.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/iCheck/jquery.icheck.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/moment/min/moment.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/bootbox/bootbox.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/jquery.scrollTo/jquery.scrollTo.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/ScrollToFixed/jquery-scrolltofixed-min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/jquery.appear/jquery.appear.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/jquery-cookie/jquery.cookie.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/velocity/jquery.velocity.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/TouchSwipe/jquery.touchSwipe.min.js")"></script>
-    <!-- end: MAIN JAVASCRIPTS -->
-    <!-- start: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
-    <script src="@Url.Content("~/Content/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/jquery-mockjax/jquery.mockjax.js")"></script>
+        <div class="row border-top border-light mx-xl-5 py-4">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-dark">
+                    &copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed
+                    by
+                    <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a>
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="img/payments.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
-    <script src="@Url.Content("~/Content/assets/plugins/fullcalendar/fullcalendar/fullcalendar.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-switch/dist/js/bootstrap-switch.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/jquery.validate.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/DataTables/media/js/jquery.dataTables.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/DataTables/media/js/dataTables.fixedHeader.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/toggle/toggle.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/truncate/jquery.truncate.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-daterangepicker/daterangepicker.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/NepaliDatePick/nepali.datepicker.v2.1.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/summernote/dist/summernote.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/jqueryFixedHeader/table-fixed-header.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/nvd3/lib/d3.v3.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/nvd3/nv.d3.min.js")"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
 
-    <script src="~/Content/assets/plugins/select2/select2helper.js"></script>
-    <script src="~/Content/assets/plugins/select2/select2.min.js"></script>
-    <script src="~/Content/assets/plugins/select2/en.js"></script>
-
-    <script src="@Url.Content("~/Scripts/form-wizard.js")"></script>
-    <script src="@Url.Content("~/Scripts/jquery.smartWizard.js")"></script>
-    <script src="@Url.Content("~/Content/assets/js/table-data.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/tableExport/tableExport.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/tableExport/jquery.base64.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/tableExport/html2canvas.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/sweetalert/lib/sweet-alert.min.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/tableExport/jspdf/libs/sprintf.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/tableExport/jspdf/jspdf.js")"></script>
-    <script src="@Url.Content("~/Content/assets/plugins/tableExport/jspdf/libs/base64.js")"></script>
-    <script src="@Url.Content("~/Content/assets/js/table-export.js")"></script>
-    <script src="@Url.Content("~/Content/assets/js/ui-modals.js")"></script>
-    <script src="@Url.Content("~/Content/assets/js/main.js")"></script>
-    <script src="@Url.Content("~/Content/assets/js/jquery.searchable-1.0.0.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/startup.js?v=20210709")"></script>
-    <script src="@Url.Content("~/Scripts/CardRequest/CommonJS.js?v=20210709")"></script>
-
-    <!-- end: CORE JAVASCRIPTS  -->
-    <!--DMS-->
-    <link href="~/Content/dropzone.css" rel="stylesheet" />
-    <script src="~/Scripts/DMS/Miscellaneous.js"></script>
-    <script src="~/Scripts/DMS/dropzone.js"></script>
-    <script src="~/Scripts/bootstrap-timepicker.min.js"></script>
-    <script src="~/Scripts/IconPicker/bootstrap-iconpicker.min.js"></script>
-    <script src="~/Scripts/ToasterNotification/jquery.toaster.js"></script>
-    <script src="~/Scripts/TableEdit/jquery.tabledit.js"></script>
-    <script src="~/Scripts/PrintThis/printThis.js"></script>
-    <script src="~/Scripts/nepali.datepicker.v2.2/nepali.datepicker.v2.2.min.js"></script>
-    <script src="~/Scripts/DMS/ImageUpload.js"></script>
-    <script src="~/Content/assets/js/FaijanManualToaster.js"></script>
-    <!--DMS-->
-    <script src="@Url.Action("Config","JavaScript")"></script>
-
-    <link href="~/Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
-    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <script src="@Url.Content("~/Scripts/DataTables/jquery.dataTables.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/DataTables/dataTables.buttons.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/DataTables/buttons.flash.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/DataTables/jszip.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/DataTables/buttons.html5.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/DataTables/buttons.print.min.js")"></script>
-    @*for password strength*@
-    <script src="~/Scripts/password_strength.js"></script>
-    <script src="~/Scripts/password_strength_lightweight.js"></script>
-
-    <script>
-        $(document).ready(function ($) {
-            $('#myPassword').strength_meter();
-        });
-    </script>
-
-    <script>
-        $(document).ready(function (e) {
-            $('.main-navigation-menu a[href="#"]').each(function (item, index) {
-                var hasIcon = $(this).find('.fa');
-                if (hasIcon.length == 0) { $(this).prepend('<i class="fa fa-folder"></a>'); }
-            });
-            $('.main-navigation-menu a[href!="#"]').each(function (item, index) {
-                var hasIcon = $(this).find('.fa');
-                if (hasIcon.length == 0) { $(this).prepend('<i class="fa fa-list"></a>'); }
-            });
-        });
-    </script>
-
-
-    <script>
-        function ReApplyDataTable($selector) {
-            $selector = $selector || '.dataTable';
-            oTable = $($selector).dataTable({
-                "aoColumnDefs": [{
-                    //"aTargets": [0]
-                }],
-                "oLanguage": {
-                    "sLengthMenu": "Show _MENU_ Rows",
-                    "sSearch": "",
-                    "oPaginate": {
-                        "sPrevious": "",
-                        "sNext": ""
-                    }
-                },
-                "aaSorting": [[0, 'asc']],
-                // set the initial value
-                "iDisplayLength": 100,
-                "lengthMenu": [[10, 25, 50, 100, 500], [10, 25, 50, 100, 500]],
-                fixedHeader: true,
-                //for excel print
-                dom: 'Blfrtip',
-                buttons: [{
-                    extend: 'excelHtml5',
-                    customizeData: function (data) {
-                        for (var i = 0; i < data.body.length; i++) {
-                            for (var j = 0; j < data.body[i].length; j++) {
-                                data.body[i][j] = '\u200C' + data.body[i][j];
-                            }
-                        }
-                    },
-                    orientation: 'landscape'
-                }]
-            });
-            $('.dataTables_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
-        }
-        var oTable;
-        $(document).ready(function () {
-            Main.init();
-            TableExport.init();
-            //UIModals.init();
-            // console.log('init...');
-            ReApplyDataTable();
-
-            $('.nepali-calendar').attr('readonly', 'readonly').nepaliDatePicker({
-
-                format: "yyyy-mm-dd",
-                npdMonth: true,
-                npdYear: true,
-                npdYearCount: 50
-            });
-            applySelect();
-
-            //$('#cmdPrint, .cmdPrint').on('click', function (e) {
-            //    e.preventDefault();
-            //    window.print();
-            //});
-            $('#NepDate').on('mouseover', function (e) {
-                e.preventDefault();
-
-                $("#EngDate").toggle();
-
-            });
-            $('#NepDate').on('mouseout', function (e) {
-                e.preventDefault();
-
-                $("#EngDate").toggle();
-
-            });
-
-
-
-            $('.summernote').each(function () {
-                var _thisNote = $(this);
-                $(this).summernote({
-                    height: 300,
-                    tabsize: 2,
-                    oninit: function () {
-                        if (_thisNote.code() == "" || _thisNote.code().replace(/(<([^>]+)>)/ig, "") == "") {
-                            _thisNote.code(_thisNote.attr("placeholder"));
-                        }
-                    },
-                    onfocus: function (e) {
-                        if (_thisNote.code() == _thisNote.attr("placeholder")) {
-                            _thisNote.code("");
-                        }
-                    },
-                    onblur: function (e) {
-                        if (_thisNote.code() == "" || _thisNote.code().replace(/(<([^>]+)>)/ig, "") == "") {
-                            _thisNote.code(_thisNote.attr("placeholder"));
-                        }
-                    }
-                });
-            });
-
-        });
-
-    </script>
-
-    @RenderSection("Scripts", false)
-
-    <script>
-        $.validator.setDefaults({
-            ignore: ""
-        });
-
-        //for menu
-        $(document).ready(function () {
-            // Code for Current Active Page to open node at left
-
-            var hjref = $(location).attr('href');
-            // console.log("Current Address of Active page" + hjref);
-            var pathname = $(location).attr('pathname');
-            //console.log("Current Path of Active page" + pathname);
-
-            $found = false;
-            $('.sub-menu li a').each(function (e) {
-                var hrefl = $(this).attr('href');
-                if (pathname == hrefl && $found == false) {
-                    $found = true;
-                    $(this).addClass("active");
-
-                    $parent = $(this).parents('li');
-                    $parent = $($parent.get().reverse());
-                    $parent.each(function () {
-                        console.log($(this));
-                        //$(this).find('> a').trigger('click'); //.addClass('open')
-                        $(this).addClass('open').children('ul').slideDown(5, function () {
-                            if (mainNavigation.height() > $(".main-navigation-menu").outerHeight()) {
-                                mainNavigation.scrollTo(0, 5, {
-                                    onAfter: function () {
-                                        if ($body.hasClass("isMobile") == false) {
-                                            mainNavigation.perfectScrollbar('update');
-                                        }
-                                    }
-                                });
-                            } else {
-                                mainNavigation.scrollTo($(this).parent("li"), 5, {
-                                    onAfter: function () {
-                                        if ($body.hasClass("isMobile") == false) {
-                                            mainNavigation.perfectScrollbar('update');
-                                        }
-                                    }
-                                });
-                            }
-                        });
-                    })
-                }
-            });
-
-            var openMenu = "@ViewBag.MenuID";
-            console.log(openMenu);
-
-            $('.trigOnLoad').each(function (item, index) {
-                $(this).trigger('click');
-            });
-        });
-        $(document).ready(function () {
-            $('.table-fixed-header').fixedHeader();
-        });
-
-
-        $('.datepicker').attr('readonly', 'readonly').datepicker({
-            format: 'yyyy-mm-dd',
-            //"setDate": new Date(),
-            "autoclose": true
-            //startDate: '-3d'
-        });
-       //.datepicker("setDate", '1d');
-    </script>
-
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
-<!-- end: BODY -->
 
 </html>
