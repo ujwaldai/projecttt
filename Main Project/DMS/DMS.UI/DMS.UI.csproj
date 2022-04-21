@@ -57,12 +57,10 @@
       <HintPath>..\packages\BeginCollectionItem.1.2.1.0\lib\net35\BeginCollectionItem.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus, Version=5.6.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.5.6.1\lib\net45\EPPlus.dll</HintPath>
@@ -304,6 +302,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\UserManagement.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Main\loginController.cs" />
     <Compile Include="Controllers\Main\AccountController.cs" />
     <Compile Include="Controllers\Base\BaseControllerV1Controller.cs" />
     <Compile Include="Controllers\Base\_BaseAuthenticatedController.cs" />
@@ -1015,6 +1014,8 @@
     <Content Include="Content\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="Content\LeftSideMenuBar.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\login\asset\dist\index.html" />
+    <Content Include="Content\login\asset\dist\style.css" />
     <Content Include="Content\ModalCss.css" />
     <Content Include="Content\NewFolder1\css\style.css" />
     <Content Include="Content\NewFolder1\css\style.min.css" />
@@ -1224,6 +1225,8 @@
     <Content Include="Content\NewFolder1\scss\bootstrap\scss\_utilities.scss" />
     <Content Include="Content\NewFolder1\scss\bootstrap\scss\_variables.scss" />
     <Content Include="Content\NewFolder1\scss\style.scss" />
+    <Content Include="Content\login\asset\src\index.pug" />
+    <Content Include="Content\login\asset\src\style.scss" />
     <None Include="Properties\PublishProfiles\card_mgmt.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
@@ -1511,6 +1514,8 @@
     <Content Include="Views\Home\AccessDeniedPage.cshtml" />
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\SystemUsers\RegisterUserEmployee.cshtml" />
+    <Content Include="Views\login\Admin_Home.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
