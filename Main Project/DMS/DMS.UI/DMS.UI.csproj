@@ -390,6 +390,47 @@
     <Compile Include="ViewModels\VMEmail\VMBaseEmailFormat.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\admin panel\css\style-starter.css" />
+    <Content Include="Content\admin panel\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\admin panel\images\avatar1.jpg" />
+    <Content Include="Content\admin panel\images\avatar2.jpg" />
+    <Content Include="Content\admin panel\images\avatar3.jpg" />
+    <Content Include="Content\admin panel\images\avatar4.jpg" />
+    <Content Include="Content\admin panel\images\avatar5.jpg" />
+    <Content Include="Content\admin panel\images\avatar6.jpg" />
+    <Content Include="Content\admin panel\images\avatar7.jpg" />
+    <Content Include="Content\admin panel\images\cart.jpg" />
+    <Content Include="Content\admin panel\images\content.jpg" />
+    <Content Include="Content\admin panel\images\dashboard.jpg" />
+    <Content Include="Content\admin panel\images\desk.jpg" />
+    <Content Include="Content\admin panel\images\down.png" />
+    <Content Include="Content\admin panel\images\logo.png" />
+    <Content Include="Content\admin panel\images\people1.jpg" />
+    <Content Include="Content\admin panel\images\people2.jpg" />
+    <Content Include="Content\admin panel\images\people3.jpg" />
+    <Content Include="Content\admin panel\images\people4.jpg" />
+    <Content Include="Content\admin panel\images\Preloader_11.gif" />
+    <Content Include="Content\admin panel\images\profileimg-big.jpg" />
+    <Content Include="Content\admin panel\images\profileimg.jpg" />
+    <Content Include="Content\admin panel\images\sort_asc.png" />
+    <Content Include="Content\admin panel\images\sort_both.png" />
+    <Content Include="Content\admin panel\images\sort_desc.png" />
+    <Content Include="Content\admin panel\images\team.jpg" />
+    <Content Include="Content\admin panel\images\team2.jpg" />
+    <Content Include="Content\admin panel\images\team3.jpg" />
+    <Content Include="Content\admin panel\images\team4.jpg" />
+    <Content Include="Content\admin panel\images\template1.jpg" />
+    <Content Include="Content\admin panel\images\template2.jpg" />
+    <Content Include="Content\admin panel\js\bar.js" />
+    <Content Include="Content\admin panel\js\bootstrap.min.js" />
+    <Content Include="Content\admin panel\js\Chart.min.js" />
+    <Content Include="Content\admin panel\js\jquery-1.10.2.min.js" />
+    <Content Include="Content\admin panel\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\admin panel\js\jquery.nicescroll.js" />
+    <Content Include="Content\admin panel\js\linechart.js" />
+    <Content Include="Content\admin panel\js\modernizr.js" />
+    <Content Include="Content\admin panel\js\scripts.js" />
+    <Content Include="Content\admin panel\js\utils.js" />
     <Content Include="Content\assets\css\chart_thamel.css" />
     <Content Include="Content\assets\css\custom.min.css" />
     <Content Include="Content\assets\css\FaijanManualToaster.css" />
@@ -1014,8 +1055,6 @@
     <Content Include="Content\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="Content\LeftSideMenuBar.css" />
     <Content Include="Content\login.css" />
-    <Content Include="Content\login\asset\dist\index.html" />
-    <Content Include="Content\login\asset\dist\style.css" />
     <Content Include="Content\ModalCss.css" />
     <Content Include="Content\NewFolder1\css\style.css" />
     <Content Include="Content\NewFolder1\css\style.min.css" />
@@ -1225,8 +1264,11 @@
     <Content Include="Content\NewFolder1\scss\bootstrap\scss\_utilities.scss" />
     <Content Include="Content\NewFolder1\scss\bootstrap\scss\_variables.scss" />
     <Content Include="Content\NewFolder1\scss\style.scss" />
-    <Content Include="Content\login\asset\src\index.pug" />
-    <Content Include="Content\login\asset\src\style.scss" />
+    <Content Include="Content\admin panel\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\admin panel\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\admin panel\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\admin panel\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\admin panel\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\card_mgmt.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
@@ -1514,8 +1556,9 @@
     <Content Include="Views\Home\AccessDeniedPage.cshtml" />
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\SystemUsers\RegisterUserEmployee.cshtml" />
-    <Content Include="Views\login\Admin_Home.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\login\Admin_index.cshtml" />
+    <Content Include="Views\login\Admin_forms.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
